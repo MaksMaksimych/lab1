@@ -1,0 +1,35 @@
+﻿@model Laba1.Models.GuestResponse
+
+@{
+    ViewBag.Title = "Calculator";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <p>Operand 1: @Html.TextBoxFor(x => x.Operand1) </p>
+        <p>Operand 2: @Html.TextBoxFor(x => x.Operand2) </p>
+        <p>
+            @Html.LabelFor(x => x.Operation)
+            @Html.DropDownListFor(x => x.Operation, new List<SelectListItem>{
+                new SelectListItem() {Text = "+", Value = "+"},
+                new SelectListItem() {Text = "-", Value = "-"},
+                new SelectListItem() {Text = "*", Value = "*"},
+                new SelectListItem() {Text = "/", Value = "/"},
+            })
+        </p>
+        <input type="submit" value="Submit RSVP" />
+        <input type="reset">
+        
+    }
+    
+</body>
+</html>
